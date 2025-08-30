@@ -1,0 +1,27 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "apps/frontend/package.json",
+            "use": "@vercel/next"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/api/(.*)",
+            "dest": "$BACKEND_URL/$1"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "apps/frontend/$1"
+        }
+    ],
+    "env": {
+        "NEXT_PUBLIC_API_BASE_URL": "$BACKEND_URL"
+    },
+    "functions": {
+        "apps/frontend/src/app/**": {
+            "maxDuration": 30
+        }
+    }
+}

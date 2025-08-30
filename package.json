@@ -1,0 +1,25 @@
+{
+    "name": "ai-user-customizable-crew",
+    "version": "1.0.0",
+    "description": "User-customizable AI crew orchestration platform",
+    "private": true,
+    "workspaces": [
+        "apps/*",
+        "packages/*"
+    ],
+    "scripts": {
+        "dev": "turbo run dev",
+        "build": "turbo run build",
+        "test": "turbo run test",
+        "lint": "turbo run lint",
+        "clean": "turbo run clean"
+    },
+    "devDependencies": {
+        "turbo": "^1.10.16",
+        "@types/node": "^20.8.0",
+        "typescript": "^5.2.2"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    }
+}
